@@ -1,7 +1,7 @@
 {
   "name": "@sesamecare-oss/opentelemetry-node-metrics",
   "version": "1.0.0",
-  "description": "",
+  "description": "A modernized set of node metrics for OpenTelemetry",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "author": "Developers <developers@sesamecare.com>",
