@@ -1,0 +1,13 @@
+{
+  "Blank Metric": {
+    "prefix": "@metric",
+    "body": [
+      "import { Meter } from '@opentelemetry/api';",
+      "",
+      "import { NodeMetricConfig } from '../types';",
+      "",
+      "export function ${TM_FILENAME_BASE}Metric(meter: Meter, config?: NodeMetricConfig) {",
+      "}"
+    ]
+  }
+}
