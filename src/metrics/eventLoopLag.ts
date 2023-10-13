@@ -3,8 +3,7 @@ import perfHooks from 'perf_hooks';
 import { Meter } from '@opentelemetry/api';
 
 import { NodeMetricConfig } from '../types';
-
-import { prefixedName } from './util';
+import { prefixedName } from '../helpers/counterNames';
 
 // Reported always.
 const NODEJS_EVENTLOOP_LAG = 'nodejs_eventloop_lag_seconds';
@@ -18,10 +17,7 @@ const NODEJS_EVENTLOOP_LAG_P50 = 'nodejs_eventloop_lag_p50_seconds';
 const NODEJS_EVENTLOOP_LAG_P90 = 'nodejs_eventloop_lag_p90_seconds';
 const NODEJS_EVENTLOOP_LAG_P99 = 'nodejs_eventloop_lag_p99_seconds';
 
-export function eventLoopLagMetric(
-  meter: Meter,
-  config?: NodeMetricConfig,
-) {
+export function eventLoopLagMetric(meter: Meter, config?: NodeMetricConfig) {
   const histogram = perfHooks.monitorEventLoopDelay({
     resolution: config?.eventLoopMonitoringPrecision,
   });
@@ -85,7 +81,7 @@ export function eventLoopLagMetric(
     });
 }
 
-export const EventLoopMetricNames = [
+eventLoopLagMetric.metricNames = [
   NODEJS_EVENTLOOP_LAG,
   NODEJS_EVENTLOOP_LAG_MIN,
   NODEJS_EVENTLOOP_LAG_MAX,

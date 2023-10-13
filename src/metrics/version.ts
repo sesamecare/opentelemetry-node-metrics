@@ -1,8 +1,7 @@
 import { Meter } from '@opentelemetry/api';
 
 import { NodeMetricConfig } from '../types';
-
-import { prefixedName } from './util';
+import { prefixedName } from '../helpers/counterNames';
 
 const NODE_VERSION_INFO = 'nodejs_version_info';
 
@@ -21,3 +20,5 @@ export function versionMetric(meter: Meter, config?: NodeMetricConfig) {
     })
     .add(1, version);
 }
+
+versionMetric.metricNames = [NODE_VERSION_INFO];
