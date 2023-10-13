@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/sesamecare/opentelemetry-node-metrics/compare/v1.0.0...v1.0.1) (2023-10-13)
+
+
+### Bug Fixes
+
+* **metrics:** add the rest of the metrics ([5448bf8](https://github.com/sesamecare/opentelemetry-node-metrics/commit/5448bf81296850b76552765253f47105ccc8cec0))
+
 # 1.0.0 (2023-10-13)
 
 
