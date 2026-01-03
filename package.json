@@ -6,12 +6,11 @@
   "types": "build/index.d.ts",
   "author": "Developers <developers@sesamecare.com>",
   "license": "MIT",
-  "packageManager": "yarn@3.6.4",
+  "packageManager": "yarn@4.12.0",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "clean": "yarn dlx rimraf ./dist",
     "lint": "eslint .",
-    "postinstall": "coconfig",
     "test": "vitest"
   },
   "keywords": [
@@ -42,26 +41,22 @@
       "@semantic-release/github"
     ]
   },
-  "config": {
-    "coconfig": "@openapi-typescript-infra/coconfig"
-  },
   "devDependencies": {
-    "@openapi-typescript-infra/coconfig": "^4.4.0",
-    "@semantic-release/exec": "^6.0.3",
-    "@semantic-release/github": "^10.3.5",
-    "@types/node": "^20.16.5",
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
-    "coconfig": "^1.5.2",
-    "eslint": "^8.57.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-typescript": "^3.6.3",
-    "eslint-plugin-import": "^2.30.0",
-    "typescript": "^5.6.2",
-    "vitest": "^2.1.1"
+    "@eslint/js": "^9.39.2",
+    "@semantic-release/exec": "^7.1.0",
+    "@semantic-release/github": "^12.0.2",
+    "@types/node": "^25.0.3",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import-x": "^4.16.1",
+    "semantic-release": "^25.0.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.51.0",
+    "vitest": "^4.0.16"
   },
   "dependencies": {
     "@opentelemetry/api": "^1.9.0",
-    "@opentelemetry/sdk-metrics": "^1.26.0"
+    "@opentelemetry/sdk-metrics": "^2.2.0"
   }
 }

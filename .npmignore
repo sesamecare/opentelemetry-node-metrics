@@ -1,11 +1,16 @@
+# npmignore should match gitignore, except for the /build directory
 # Custom
-src/generated
 .transpiled
 .nyc_output
-.eslintcache
+.yarnrc.yml
+.yarn
 
-# TypeScript incremental compilation cache
-*.tsbuildinfo
+src/**/*.spec.ts
+src/**/*.test.ts
+/__tests__
+/__mocks__
+__snapshots__
+__image_snapshots__
 
 # Stock
 *.seed
@@ -18,7 +23,6 @@ src/generated
 *.orig
 
 work
-/build
 pids
 logs
 results
@@ -44,15 +48,3 @@ Thumbs.db
 .LSOverride
 .Spotlight-V100
 .Trashes
-
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
-
-.node_repl_history
-
-# TypeScript incremental compilation cache
-*.tsbuildinfo
