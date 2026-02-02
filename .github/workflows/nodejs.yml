@@ -18,20 +18,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js 20
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-        cache: yarn
-    - name: npm install, lint, build, and test
-      run: |
-        yarn install --immutable
-        yarn build
-        yarn lint
-        yarn test
-      env:
-        CI: true
+      - uses: actions/checkout@v4
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+      - name: npm install, lint, build, and test
+        run: |
+          yarn install --immutable
+          yarn build
+          yarn lint
+          yarn test
+        env:
+          CI: true
 
   publish-npm:
     needs: build
@@ -44,15 +44,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: yarn
       - run: yarn install --immutable
       - run: yarn build
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.SESAMECARE_OSS_NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: 'true'
         run: |
-          yarn dlx semantic-release
+          npx semantic-release
