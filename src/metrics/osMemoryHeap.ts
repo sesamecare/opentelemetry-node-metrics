@@ -1,6 +1,6 @@
-import { Meter } from '@opentelemetry/api';
+import type { Meter } from '@opentelemetry/api';
 
-import { NodeMetricConfig } from '../types';
+import type { NodeMetricConfig } from '../types';
 import { prefixedName } from '../helpers/counterNames';
 import { safeMemoryUsage } from '../helpers/safeMemoryUsage';
 

@@ -1,6 +1,6 @@
-import { Meter } from '@opentelemetry/api';
+import type { Meter } from '@opentelemetry/api';
 
-import { NodeMetricConfig } from '../types';
+import type { NodeMetricConfig } from '../types';
 import { safeMemoryUsage } from '../helpers/safeMemoryUsage';
 import { prefixedName } from '../helpers/counterNames';
 
@@ -12,7 +12,7 @@ export function heapSizeAndUsedMetric(meter: Meter, config?: NodeMetricConfig) {
   let stats: ReturnType<typeof safeMemoryUsage> | undefined | false;
 
   function getStats() {
-    if (stats !== undefined) return stats;
+    if (stats !== undefined) {return stats;}
     stats = safeMemoryUsage() || false;
     setTimeout(() => {
       stats = undefined;

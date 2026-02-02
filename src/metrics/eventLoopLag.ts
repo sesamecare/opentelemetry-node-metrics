@@ -1,8 +1,8 @@
 import perfHooks from 'perf_hooks';
 
-import { Meter } from '@opentelemetry/api';
+import type { Meter } from '@opentelemetry/api';
 
-import { NodeMetricConfig } from '../types';
+import type { NodeMetricConfig } from '../types';
 import { prefixedName } from '../helpers/counterNames';
 
 // Reported always.

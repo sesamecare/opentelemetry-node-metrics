@@ -1,8 +1,8 @@
 import nodeProcess from 'node:process';
 
-import { Meter } from '@opentelemetry/api';
+import type { Meter } from '@opentelemetry/api';
 
-import { NodeMetricConfig } from '../types';
+import type { NodeMetricConfig } from '../types';
 import { createAggregatorByObjectName } from '../helpers/processMetricsHelpers';
 import { prefixedName } from '../helpers/counterNames';
 
