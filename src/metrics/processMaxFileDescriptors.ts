@@ -1,8 +1,8 @@
 import fs from 'fs';
 
-import { Meter } from '@opentelemetry/api';
+import type { Meter } from '@opentelemetry/api';
 
-import { NodeMetricConfig } from '../types';
+import type { NodeMetricConfig } from '../types';
 import { prefixedName } from '../helpers/counterNames';
 
 const PROCESS_MAX_FDS = 'process_max_fds';

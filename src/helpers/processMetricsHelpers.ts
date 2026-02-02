@@ -1,13 +1,13 @@
-import { Attributes, ObservableResult } from '@opentelemetry/api';
+import type { Attributes, ObservableResult } from '@opentelemetry/api';
 
 export function createAggregatorByObjectName() {
-  const all = new Map();
+  const all = new Map<string, Record<string, string>>();
   return function aggregateByObjectName(
     metric: ObservableResult<Attributes>,
     labels: Record<string, string> | undefined,
     list: string[],
   ) {
-    const current = new Map();
+    const current = new Map<string, number>();
     for (const key of all.keys()) {
       current.set(key, 0);
     }

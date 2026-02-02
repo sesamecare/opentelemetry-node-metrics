@@ -1,4 +1,4 @@
-import { NodeMetricConfig } from '../types';
+import type { NodeMetricConfig } from '../types';
 
 export function prefixedName(config: NodeMetricConfig | undefined, name: string) {
   return `${config?.prefix || ''}${name}`;
