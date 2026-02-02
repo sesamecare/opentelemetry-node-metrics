@@ -1,7 +1,7 @@
-import { Meter } from '@opentelemetry/api';
+import type { Meter } from '@opentelemetry/api';
 
 import * as metrics from './metrics';
-import { NodeMetricConfig } from './types';
+import type { NodeMetricConfig } from './types';
 
 export function setupNodeMetrics(meter: Meter, config?: NodeMetricConfig) {
   Object.values(metrics).forEach((metric) => {

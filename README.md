@@ -21,6 +21,6 @@ const meter = metrics.getMeterProvider().getMeter('node-metrics');
 setupNodeMetrics(meter);
 ```
 
-Now your Prometheus-exported metrics should be included along with whatever other metrics you ahve selected. See [openapi-typescript-infra/service](https://github.com/openapi-typescript-infra/service) for a more complete example of metrics integrated with an express service host.
+Now your Prometheus-exported metrics should be included along with whatever other metrics you have selected. See [openapi-typescript-infra/service](https://github.com/openapi-typescript-infra/service) for a more complete example of metrics integrated with an express service host.
 
-One notable change from the existing libraries - they divide active handles and active 'requests' using deprecated Node APIs. I've chosed to merge these into 'resources' using the new getActiveResourcesInfo API, which is Node17+. It should fail gracefully if that function is not available.
+One notable change from the existing libraries - they divide active handles and active 'requests' using deprecated Node APIs. I've chosen to merge these into 'resources' using the new getActiveResourcesInfo API, which is Node17+. It should fail gracefully if that function is not available.

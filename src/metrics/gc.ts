@@ -1,15 +1,20 @@
-import { type NodeGCPerformanceDetail, PerformanceObserver, constants } from 'perf_hooks';
+import type { PerformanceNodeEntry} from 'perf_hooks';
+import { PerformanceObserver, constants } from 'perf_hooks';
 
-import { Meter } from '@opentelemetry/api';
+import type { Meter } from '@opentelemetry/api';
 
-import { NodeMetricConfig } from '../types';
+import type { NodeMetricConfig } from '../types';
 import { prefixedName } from '../helpers/counterNames';
 
 const NODEJS_GC_DURATION_SECONDS = 'nodejs_gc_duration_seconds';
 
-function keyForDetail(detail: NodeGCPerformanceDetail | unknown | undefined): number | string {
+interface GCDetail {
+  kind?: number;
+}
+
+function keyForDetail(detail: unknown): number | string {
   if (typeof detail === 'object' && detail !== null && 'kind' in detail) {
-    return (detail as NodeGCPerformanceDetail).kind || 'other';
+    return (detail as GCDetail).kind ?? 'other';
   }
   return 'other';
 }
@@ -27,7 +32,7 @@ export function gcMetric(meter: Meter, config?: NodeMetricConfig) {
   kinds['other'] = { ...config?.labels, kind: 'other' };
 
   const obs = new PerformanceObserver((list) => {
-    const entry = list.getEntries()[0];
+    const entry = list.getEntries()[0] as PerformanceNodeEntry;
     // Convert duration from milliseconds to seconds
     histogram.record(entry.duration / 1000, kinds[keyForDetail(entry.detail)]);
   });
