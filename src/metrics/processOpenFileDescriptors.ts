@@ -3,13 +3,15 @@ import process from 'node:process';
 
 import type { Meter } from '@opentelemetry/api';
 
-import type { NodeMetricConfig } from '../types';
-import { prefixedName } from '../helpers/counterNames';
+import type { NodeMetricConfig } from '../types.js';
+import { prefixedName } from '../helpers/counterNames.js';
 
 const PROCESS_OPEN_FDS = 'process_open_fds';
 
 export function processOpenFileDescriptorsMetric(meter: Meter, config?: NodeMetricConfig) {
-  if (process.platform !== 'linux') {return;}
+  if (process.platform !== 'linux') {
+    return;
+  }
 
   meter
     .createObservableGauge(prefixedName(config, PROCESS_OPEN_FDS), {

@@ -1,8 +1,8 @@
 import type { Meter } from '@opentelemetry/api';
 
-import type { NodeMetricConfig } from '../types';
-import { prefixedName } from '../helpers/counterNames';
-import { safeMemoryUsage } from '../helpers/safeMemoryUsage';
+import type { NodeMetricConfig } from '../types.js';
+import { prefixedName } from '../helpers/counterNames.js';
+import { safeMemoryUsage } from '../helpers/safeMemoryUsage.js';
 
 import { osMemoryHeapLinuxMetric } from './osMemoryHeapLinux';
 

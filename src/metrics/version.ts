@@ -1,7 +1,7 @@
 import type { Meter } from '@opentelemetry/api';
 
-import type { NodeMetricConfig } from '../types';
-import { prefixedName } from '../helpers/counterNames';
+import type { NodeMetricConfig } from '../types.js';
+import { prefixedName } from '../helpers/counterNames.js';
 
 const NODE_VERSION_INFO = 'nodejs_version_info';
 

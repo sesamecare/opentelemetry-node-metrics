@@ -2,8 +2,8 @@ import fs from 'fs';
 
 import type { Meter } from '@opentelemetry/api';
 
-import type { NodeMetricConfig } from '../types';
-import { prefixedName } from '../helpers/counterNames';
+import type { NodeMetricConfig } from '../types.js';
+import { prefixedName } from '../helpers/counterNames.js';
 
 const values = ['VmSize', 'VmRSS', 'VmData'];
 
@@ -37,7 +37,9 @@ export function osMemoryHeapLinuxMetric(meter: Meter, config?: NodeMetricConfig)
   let stats: ReturnType<typeof structureOutput> | undefined | false;
 
   function getStats() {
-    if (stats !== undefined) {return stats;}
+    if (stats !== undefined) {
+      return stats;
+    }
 
     try {
       const stat = fs.readFileSync('/proc/self/status', 'utf8');

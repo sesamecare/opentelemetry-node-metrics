@@ -2,8 +2,8 @@ import v8 from 'v8';
 
 import type { Meter } from '@opentelemetry/api';
 
-import type { NodeMetricConfig } from '../types';
-import { prefixedName } from '../helpers/counterNames';
+import type { NodeMetricConfig } from '../types.js';
+import { prefixedName } from '../helpers/counterNames.js';
 
 const METRICS = ['total', 'used', 'available'];
 const NODEJS_HEAP_SIZE: Record<string, string> = {};

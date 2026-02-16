@@ -1,10 +1,10 @@
-import type { PerformanceNodeEntry} from 'perf_hooks';
+import type { PerformanceNodeEntry } from 'perf_hooks';
 import { PerformanceObserver, constants } from 'perf_hooks';
 
 import type { Meter } from '@opentelemetry/api';
 
-import type { NodeMetricConfig } from '../types';
-import { prefixedName } from '../helpers/counterNames';
+import type { NodeMetricConfig } from '../types.js';
+import { prefixedName } from '../helpers/counterNames.js';
 
 const NODEJS_GC_DURATION_SECONDS = 'nodejs_gc_duration_seconds';
 

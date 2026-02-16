@@ -1,7 +1,7 @@
 import type { Meter } from '@opentelemetry/api';
 
-import type { NodeMetricConfig } from '../types';
-import { prefixedName } from '../helpers/counterNames';
+import type { NodeMetricConfig } from '../types.js';
+import { prefixedName } from '../helpers/counterNames.js';
 
 const PROCESS_CPU_USER_SECONDS = 'process_cpu_user_seconds_total';
 const PROCESS_CPU_SYSTEM_SECONDS = 'process_cpu_system_seconds_total';

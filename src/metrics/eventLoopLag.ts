@@ -2,8 +2,8 @@ import perfHooks from 'perf_hooks';
 
 import type { Meter } from '@opentelemetry/api';
 
-import type { NodeMetricConfig } from '../types';
-import { prefixedName } from '../helpers/counterNames';
+import type { NodeMetricConfig } from '../types.js';
+import { prefixedName } from '../helpers/counterNames.js';
 
 // Reported always.
 const NODEJS_EVENTLOOP_LAG = 'nodejs_eventloop_lag_seconds';

@@ -2,9 +2,9 @@ import nodeProcess from 'node:process';
 
 import type { Meter } from '@opentelemetry/api';
 
-import type { NodeMetricConfig } from '../types';
-import { createAggregatorByObjectName } from '../helpers/processMetricsHelpers';
-import { prefixedName } from '../helpers/counterNames';
+import type { NodeMetricConfig } from '../types.js';
+import { createAggregatorByObjectName } from '../helpers/processMetricsHelpers.js';
+import { prefixedName } from '../helpers/counterNames.js';
 
 const NODEJS_ACTIVE_RESOURCES = 'nodejs_active_resources';
 const NODEJS_ACTIVE_RESOURCES_TOTAL = 'nodejs_active_resources_total';
