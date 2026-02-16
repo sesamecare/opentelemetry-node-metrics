@@ -4,7 +4,7 @@ import type { NodeMetricConfig } from '../types.js';
 import { prefixedName } from '../helpers/counterNames.js';
 import { safeMemoryUsage } from '../helpers/safeMemoryUsage.js';
 
-import { osMemoryHeapLinuxMetric } from './osMemoryHeapLinux';
+import { osMemoryHeapLinuxMetric } from './osMemoryHeapLinux.js';
 
 const PROCESS_RESIDENT_MEMORY = 'process_resident_memory_bytes';
 
