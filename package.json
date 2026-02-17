@@ -2,8 +2,15 @@
   "name": "@sesamecare-oss/opentelemetry-node-metrics",
   "version": "1.0.1",
   "description": "A modernized set of node metrics for OpenTelemetry",
+  "type": "module",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "default": "./build/index.js"
+    }
+  },
   "author": "Developers <developers@sesamecare.com>",
   "license": "MIT",
   "packageManager": "yarn@3.8.7",
@@ -54,8 +61,8 @@
   "devDependencies": {
     "@openapi-typescript-infra/cpconfig": "^1.1.0",
     "@semantic-release/exec": "^7.1.0",
-    "@semantic-release/github": "^12.0.3",
-    "@types/node": "^25.2.0",
+    "@semantic-release/github": "^12.0.6",
+    "@types/node": "^25.2.3",
     "cpconfig": "^1.4.4",
     "eslint": "^9.39.2",
     "prettier": "^3.8.1",
@@ -64,6 +71,6 @@
   },
   "dependencies": {
     "@opentelemetry/api": "^1.9.0",
-    "@opentelemetry/sdk-metrics": "^2.5.0"
+    "@opentelemetry/sdk-metrics": "^2.5.1"
   }
 }
