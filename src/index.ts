@@ -9,6 +9,6 @@ export function setupNodeMetrics(meter: Meter, config?: NodeMetricConfig) {
   });
 }
 
-export type * from './types';
+export type * from './types.js';
 
 export const NodeMetrics = metrics;
